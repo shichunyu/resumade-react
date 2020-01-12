@@ -71,9 +71,9 @@
 	{
 		"type": "input",
 		"value": "",
-		"labelText": "Street",
+		"labelText": "Address Line 1",
 		"config":{
-				"name": "street",
+				"name": "address1",
 				"type": "text",
 				"placeholder": "111 Main St"
 		},
@@ -86,14 +86,82 @@
 		"validationMessage":""
 	},
 	{
-		"type": "select",
+		"type": "input",
+		"value": "",
+		"labelText": "Address Line 2",
+		"config":{
+				"name": "address2",
+				"type": "text",
+				"placeholder": "Unit 3a"
+		},
+		"validation":{
+				"required":true,
+				"minLength": 5
+		},
+		"valid":false,
+		"touched":false,
+		"validationMessage":""
+	},
+	{
+		"type": "input",
 		"value": "",
 		"labelText": "City",
 		"config":{
 				"name": "city",
+				"type": "text",
+				"placeholder": "New York City"
+		},
+		"validation":{
+				"required":true,
+				"minLength": 5
+		},
+		"valid":false,
+		"touched":false,
+		"validationMessage":""
+	},
+	{
+		"type": "input",
+		"value": "",
+		"labelText": "State/Province/Region",
+		"config":{
+				"name": "state",
+				"type": "text",
+				"placeholder": "New York"
+		},
+		"validation":{
+				"required":true,
+				"minLength": 5
+		},
+		"valid":false,
+		"touched":false,
+		"validationMessage":""
+	},
+	{
+		"type": "input",
+		"value": "",
+		"labelText": "ZIP/Postal Code",
+		"config":{
+				"name": "zip",
+				"type": "text",
+				"placeholder": "10001"
+		},
+		"validation":{
+				"required":true,
+				"minLength": 5
+		},
+		"valid":false,
+		"touched":false,
+		"validationMessage":""
+	},
+	{
+		"type": "select",
+		"value": "",
+		"labelText": "Country",
+		"config":{
+				"name": "state",
 				"options": [
-						{ "val": "toronto", "text": "Toronto"},
-						{ "val": "new york", "text": "New York"}
+						{ "val": "unitedstates", "text": "United States"},
+						{ "val": "canada", "text": "Canada"}
 				]
 		},
 		"validation":{

@@ -40,6 +40,27 @@ const FormElement = ( {element, index, onChange, name} ) => {
 				)
 				break
 
+				case('select'):
+					elementHTML = (
+						<div id={`formElement-${index}`}>
+							<div>
+								<label>{element.labelText}</label>
+							</div> 
+							<div>
+								<select
+									value={element.value}
+									onChange={(event) => onChange({event, element, index, name})} // passing as an object
+								>
+									{ element.config.options.map((item,i) => (
+										<option key={i} value={item.val}> {item.text} </option>
+									)) }
+								</select>
+							</div>
+						</div>
+					)
+
+					break
+
 			default:
 					elementHTML = ('update this!')
 				break
