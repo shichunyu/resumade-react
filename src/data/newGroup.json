@@ -1,0 +1,40 @@
+[
+	{
+		"type": "group",
+		"jobDesc": {
+			"type": "textarea",
+			"value": "",
+			"labelText": "Job Description",
+			"config": {
+					"name": "jobDesc"
+			},
+			"validation":{
+					"required":true,
+					"minLength": 5
+			},
+			"valid":false,
+			"touched":false,
+			"validationMessage":""
+		},
+		"yourExp": {
+			"type": "textarea",
+			"value": "",
+			"labelText": "Your Experience",
+			"config": {
+				"name": "yourExp"
+			},
+			"validation":{
+				"required":true,
+				"minLength": 5
+			},
+			"valid":false,
+			"touched":false,
+			"validationMessage":""
+			},
+		"groupConfig": {
+			"type": "textarea",
+			"rows": 4,
+			"cols": 43
+		}
+	}
+]
