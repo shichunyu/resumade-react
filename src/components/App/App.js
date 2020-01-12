@@ -79,40 +79,46 @@ function App() {
   
   return (
    <div className="wrapper">
-    <h1>About Yourself</h1>
-    {
-      staticFormState.map( (formItem, index) => (
-        <FormElement
-          key={index}
-          index={index}
-          element={formItem}
-          onChange={handleStaticFormChange}
-        />
-      ))
-    }
-
-    <h1>Your Job Experience</h1>
-    {
-      groupState.map( (groupItem, index) => (
-        
-        <div key={index} id={`group-${index}`}>
+    <div className="hero">
+      <h1>Welcome to Resumade</h1> 
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias possimus rem quibusdam qui, officiis nobis repellendus molestiae a porro eius, odit mollitia ipsa optio dolore numquam, deleniti saepe voluptate maiores.
+    </div>
+    <div className="form">
+      <h1>About Yourself</h1>
+      {
+        staticFormState.map( (formItem, index) => (
           <FormElement
-            name='jobDesc'
+            key={index}
             index={index}
-            element={groupItem.jobDesc}
-            onChange={handleGroupChange}
+            element={formItem}
+            onChange={handleStaticFormChange}
           />
-          <FormElement
-            name='yourExp'
-            index={index}
-            element={groupItem.yourExp}
-            onChange={handleGroupChange}
-          />
-        </div>
-      ))
-    }
+        ))
+      }
 
-    <button onClick={addNew}>Add New</button>
+      <h1>Your Job Experience</h1>
+      {
+        groupState.map( (groupItem, index) => (
+          
+          <div key={index} id={`group-${index}`}>
+            <FormElement
+              name='jobDesc'
+              index={index}
+              element={groupItem.jobDesc}
+              onChange={handleGroupChange}
+            />
+            <FormElement
+              name='yourExp'
+              index={index}
+              element={groupItem.yourExp}
+              onChange={handleGroupChange}
+            />
+          </div>
+        ))
+      }
+
+      <button onClick={addNew}>Add New</button>
+    </div>
      
    </div>
   );
