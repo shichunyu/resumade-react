@@ -10,7 +10,12 @@ const Header = () => {
 	return (
 		<div className={styles.wrapper}>
 			 <div className={clsx(styles.content, 'centered-content')}>
-			 	Resumade.ai
+			 	<div className={styles.left}>
+					Resumade.ai
+				</div>
+				<div className={styles.right}>
+					About
+				</div>
 			 </div>
 		</div>
 	)

@@ -3,16 +3,14 @@ import React from 'react'
 // COMPONENTS
 import App from '../App/App'
 import Header from '../Header/Header'
-
-// STYLES
-import styles from './Layout.module.css'
+import Footer from '../Footer/Footer'
 
 const Layout = () => {
 	return (
 		<div>
 			<Header/>
 			<App/>
-			Footer
+			<Footer/>
 		</div>
 	)
 }
