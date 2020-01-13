@@ -7,7 +7,7 @@ import FIELDS from '../../data/fields.json'
 import FormElement from '../FormElement/FormElement'
 
 // STYLES
-import './App.css';
+import styles from './App.module.css';
 
 function App() {
   const [staticFormState, setStaticFormState] = useState ([
@@ -78,10 +78,12 @@ function App() {
   }
   
   return (
-   <div className="wrapper">
-    <div className="hero">
-      <h1>Welcome to Resumade</h1> 
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias possimus rem quibusdam qui, officiis nobis repellendus molestiae a porro eius, odit mollitia ipsa optio dolore numquam, deleniti saepe voluptate maiores.
+   <div className={styles.wrapper}>
+    <div className={styles.hero}>
+      <div className="centered-content">
+        <h1>Welcome to Resumade</h1> 
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias possimus rem quibusdam qui, officiis nobis repellendus molestiae a porro eius, odit mollitia ipsa optio dolore numquam, deleniti saepe voluptate maiores.
+      </div>
     </div>
     <div className="form">
       <h1>About Yourself</h1>
