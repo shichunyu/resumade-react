@@ -4,10 +4,16 @@ import React, { useState } from 'react';
 import GROUP from '../../data/group.json'
 import NEWGROUP from '../../data/newGroup.json'
 import FIELDS from '../../data/fields.json'
-import FormElement from '../FormElement/FormElement'
+
+// Widgets
+import FormElement from '../../widgets/FormElement/FormElement'
+import Button from '../../widgets/Button/Button'
+
+// Dependencies
+import clsx from 'clsx'
 
 // STYLES
-import styles from './App.module.css';
+import styles from './App.module.css'
 
 function App() {
   const [staticFormState, setStaticFormState] = useState ([
@@ -79,48 +85,55 @@ function App() {
   
   return (
    <div>
-    <div className={styles.hero}>
+
+    <div className={clsx(styles.hero,"section-padding")}>
       <div className="centered-content">
         <h1>Welcome to Resumade</h1> 
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias possimus rem quibusdam qui, officiis nobis repellendus molestiae a porro eius, odit mollitia ipsa optio dolore numquam, deleniti saepe voluptate maiores.
       </div>
     </div>
-    <div className="centered-content">
-      <h1>Contact Information</h1>
-      {
-        staticFormState.map( (formItem, index) => (
-          <FormElement
-            key={index}
-            index={index}
-            element={formItem}
-            onChange={handleStaticFormChange}
-          />
-        ))
-      }
 
-      <h1>Relevant Skills & Job Experience</h1>
-      {
-        groupState.map( (groupItem, index) => (
-          
-          <div key={index} id={`group-${index}`}>
+    <div className={clsx("centered-content","section-padding")}>
+      <div className="contact-info">
+        <h1>Contact Information</h1>
+        {
+          staticFormState.map( (formItem, index) => (
             <FormElement
-              name='jobDesc'
+              key={index}
               index={index}
-              element={groupItem.jobDesc}
-              onChange={handleGroupChange}
+              element={formItem}
+              onChange={handleStaticFormChange}
             />
-            <FormElement
-              name='yourExp'
-              index={index}
-              element={groupItem.yourExp}
-              onChange={handleGroupChange}
-            />
-            <hr/>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
 
-      <button onClick={addNew}>Add Experience</button>
+      <div className="job-experience">
+        <h1>Relevant Skills & Job Experience</h1>
+        {
+          groupState.map( (groupItem, index) => (
+            
+            <div key={index} id={`group-${index}`}>
+              <FormElement
+                name='jobDesc'
+                index={index}
+                element={groupItem.jobDesc}
+                onChange={handleGroupChange}
+              />
+              <FormElement
+                name='yourExp'
+                index={index}
+                element={groupItem.yourExp}
+                onChange={handleGroupChange}
+              />
+              <hr/>
+            </div>
+          ))
+        }
+        <Button onClick={addNew}>Add Experience</Button>
+      </div>
+
+    
     </div>
      
    </div>
