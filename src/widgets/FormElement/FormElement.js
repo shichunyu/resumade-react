@@ -3,10 +3,31 @@ import React from 'react'
 // Dependencies
 import clsx from 'clsx'
 
+// External Components
+import Select from 'react-select'
+
 // STYLES
 import styles from './FormElement.module.css'
 
 const FormElement = ( {element, index, onChange, name} ) => {
+
+	const selectStyles = {
+		container: (base) => ({
+			...base,
+			flex: 1,
+			height: '2rem',
+			'min-height': '2rem'
+		}),
+		valueContainer: (base) => ({
+			...base,
+			'padding': '0px 1rem 0px 1rem',
+			height: '2rem'
+		}),
+		placeholder: (base) => ({
+			...base,
+			'font-size': '1rem'
+		})
+	}
 
 	const renderForm = () => {
 		let elementHTML = null
@@ -22,7 +43,7 @@ const FormElement = ( {element, index, onChange, name} ) => {
 							<input 
 								{...element.config}
 								value={element.value}
-								onChange={(event) => onChange({event, element, index, name})} // passing as an object
+								onChange={(event) => onChange({event, element, index, name})}
 							/>
 						</div>
 					</div>
@@ -35,15 +56,14 @@ const FormElement = ( {element, index, onChange, name} ) => {
 								<div className={styles.label}>
 									<label>{element.labelText}</label>
 								</div> 
-								<div className={clsx(styles.field, "flex")}>
-									<select
-										value={element.value}
-										onChange={(event) => onChange({event, element, index, name})} // passing as an object
+								<div className={clsx(styles.field, "flex", "select-field")}>
+									<Select
+										onChange={(event) => onChange({event, element, index, name})}
+										options = {element.config.options}
+										styles={selectStyles}
+										classNamePrefix="select"
 									>
-										{ element.config.options.map((item,i) => (
-											<option key={i} value={item.val}> {item.text} </option>
-										)) }
-									</select>
+									</Select>
 								</div>
 							</div>
 					)
@@ -59,7 +79,7 @@ const FormElement = ( {element, index, onChange, name} ) => {
 								<textarea
 									{...element.config}
 									value={element.value}
-									onChange={(event) => onChange({event, element, index, name})} // passing as an object
+									onChange={(event) => onChange({event, element, index, name})}
 								/>
 							</div>
 						</div>

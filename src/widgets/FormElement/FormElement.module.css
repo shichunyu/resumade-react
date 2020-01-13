@@ -6,7 +6,7 @@ div.field {
 	margin-bottom: .5rem;
 }
 
-input, select, textarea {
+input, textarea {
 	flex: 1;
 	font-size: 1rem;
 	color: #3c457d;
@@ -14,14 +14,13 @@ input, select, textarea {
 	border-radius: .25rem;
 	background: #fefefe;
 	margin-bottom: .5rem;
-	padding: 0px 15px 0px 15px;
+	padding: 0px 1rem 0px 1rem;
 }
 
-input, select {
+input {
 	height: 2rem;
 }
-
-input:focus, select:focus {
+input:focus {
 	border: .1rem solid #536ade;
 }
 

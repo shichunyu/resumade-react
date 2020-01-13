@@ -160,8 +160,8 @@
 		"config":{
 				"name": "state",
 				"options": [
-						{ "val": "unitedstates", "text": "United States"},
-						{ "val": "canada", "text": "Canada"}
+						{ "value": "unitedstates", "label": "United States"},
+						{ "value": "canada", "label": "Canada"}
 				]
 		},
 		"validation":{
