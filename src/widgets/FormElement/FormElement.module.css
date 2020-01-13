@@ -1,5 +1,12 @@
+@value colors: "../../variables.css";
+@value blue from colors;
+@value dark-blue from colors;
+@value light-gray from colors;
+@value gray from colors;
+
 div.label {
 	margin-bottom: .25rem;
+	font-weight: bold;
 }
 
 div.field {
@@ -14,7 +21,8 @@ input, textarea {
 	border-radius: .25rem;
 	background: #fefefe;
 	margin-bottom: .5rem;
-	padding: 0px 1rem 0px 1rem;
+	padding: 0px .75rem 0px .75rem;
+	font-family: inherit;
 }
 
 input {

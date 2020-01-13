@@ -6,7 +6,8 @@
 			"value": "",
 			"labelText": "Job Description",
 			"config": {
-					"name": "jobDesc"
+					"name": "jobDesc",
+					"placeholder": "Copy and paste a bullet point or short section from the job application..."
 			},
 			"validation":{
 					"required":true,
@@ -21,7 +22,8 @@
 			"value": "",
 			"labelText": "Your Experience",
 			"config": {
-				"name": "yourExp"
+				"name": "yourExp",
+				"placeholder": "... then in here, put some bullet points with your own job experience here that is relevant to the above job description."
 			},
 			"validation":{
 				"required":true,

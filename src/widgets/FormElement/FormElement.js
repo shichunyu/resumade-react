@@ -20,7 +20,7 @@ const FormElement = ( {element, index, onChange, name} ) => {
 		}),
 		valueContainer: (base) => ({
 			...base,
-			'padding': '0px 1rem 0px 1rem',
+			'padding': '0px .75rem 0px .75rem',
 			height: '2rem'
 		}),
 		placeholder: (base) => ({

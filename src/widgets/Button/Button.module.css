@@ -1,8 +1,14 @@
+@value colors: "../../variables.css";
+@value blue from colors;
+@value dark-blue from colors;
+@value light-gray from colors;
+@value gray from colors;
+
 button {
 	font-size: 1rem;
 	margin: 2rem auto 0rem auto;
 	padding: 1rem 3rem 1rem 3rem;
-	background: #536ade;
+	background: blue;
 	color: #fff;
 	border: none;
 	border-radius: .5rem;
