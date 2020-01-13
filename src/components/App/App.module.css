@@ -1,15 +1,8 @@
 .hero {
 	background-color: #536ade;
-	padding: 2em 1em 2em 1em;
 	color: #e6e8f4;
 }
 
 .hero h1 {
-	margin-top: 0em;
 	text-align: center;
-}
-
-.hero .content {
-	margin: 0 auto 0 auto;
-	max-width: 900px;
 }

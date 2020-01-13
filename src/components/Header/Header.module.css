@@ -6,4 +6,7 @@
 
 .content {
 	color: #e6e8f4;
+	flex: 1;
+	margin-top: auto;
+	margin-bottom: auto;
 }

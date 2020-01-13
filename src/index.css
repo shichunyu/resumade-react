@@ -6,4 +6,9 @@ body {
 .centered-content {
 	margin: 0 auto 0 auto;
 	max-width: 900px;
+	padding: 2em 1em 2em 1em;
+}
+
+.flex {
+	display: flex;
 }

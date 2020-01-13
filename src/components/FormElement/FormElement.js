@@ -1,5 +1,11 @@
 import React from 'react'
 
+// Dependencies
+import clsx from 'clsx'
+
+// STYLES
+import styles from './FormElement.module.css'
+
 const FormElement = ( {element, index, onChange, name} ) => {
 
 	const renderForm = () => {
@@ -9,10 +15,10 @@ const FormElement = ( {element, index, onChange, name} ) => {
 			case('input'):
 				elementHTML = (
 					<div id={`formElement-${index}`}>
-						<div>
+						<div className={styles.label}>
 							<label>{element.labelText}</label>
 						</div>
-						<div>
+						<div className={clsx(styles.field, "flex")}>
 							<input 
 								{...element.config}
 								value={element.value}
@@ -22,43 +28,42 @@ const FormElement = ( {element, index, onChange, name} ) => {
 					</div>
 				)
 				break
-
-			case('textarea'):
-				elementHTML = (
-					<div id={`formElement-${index}`}>
-						<div>
-							<label>{element.labelText}</label>
-						</div>
-						<div>
-							<textarea
-								{...element.config}
-								value={element.value}
-								onChange={(event) => onChange({event, element, index, name})} // passing as an object
-							/>
-						</div>
-					</div>
-				)
-				break
-
+				
 				case('select'):
 					elementHTML = (
 						<div id={`formElement-${index}`}>
-							<div>
+								<div className={styles.label}>
+									<label>{element.labelText}</label>
+								</div> 
+								<div className={clsx(styles.field, "flex")}>
+									<select
+										value={element.value}
+										onChange={(event) => onChange({event, element, index, name})} // passing as an object
+									>
+										{ element.config.options.map((item,i) => (
+											<option key={i} value={item.val}> {item.text} </option>
+										)) }
+									</select>
+								</div>
+							</div>
+					)
+					break
+				
+				case('textarea'):
+					elementHTML = (
+						<div id={`formElement-${index}`}>
+							<div className={styles.label}>
 								<label>{element.labelText}</label>
-							</div> 
-							<div>
-								<select
+							</div>
+							<div className={clsx(styles.field, "flex")}>
+								<textarea
+									{...element.config}
 									value={element.value}
 									onChange={(event) => onChange({event, element, index, name})} // passing as an object
-								>
-									{ element.config.options.map((item,i) => (
-										<option key={i} value={item.val}> {item.text} </option>
-									)) }
-								</select>
+								/>
 							</div>
 						</div>
 					)
-
 					break
 
 			default:

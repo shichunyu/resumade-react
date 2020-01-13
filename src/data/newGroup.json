@@ -32,9 +32,7 @@
 			"validationMessage":""
 			},
 		"groupConfig": {
-			"type": "textarea",
-			"rows": 4,
-			"cols": 43
+			"type": "textarea"
 		}
 	}
 ]

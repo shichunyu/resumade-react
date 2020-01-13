@@ -78,15 +78,15 @@ function App() {
   }
   
   return (
-   <div className={styles.wrapper}>
+   <div>
     <div className={styles.hero}>
       <div className="centered-content">
         <h1>Welcome to Resumade</h1> 
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias possimus rem quibusdam qui, officiis nobis repellendus molestiae a porro eius, odit mollitia ipsa optio dolore numquam, deleniti saepe voluptate maiores.
       </div>
     </div>
-    <div className="form">
-      <h1>About Yourself</h1>
+    <div className="centered-content">
+      <h1>Contact Information</h1>
       {
         staticFormState.map( (formItem, index) => (
           <FormElement
@@ -98,7 +98,7 @@ function App() {
         ))
       }
 
-      <h1>Your Job Experience</h1>
+      <h1>Relevant Skills & Job Experience</h1>
       {
         groupState.map( (groupItem, index) => (
           
@@ -115,11 +115,12 @@ function App() {
               element={groupItem.yourExp}
               onChange={handleGroupChange}
             />
+            <hr/>
           </div>
         ))
       }
 
-      <button onClick={addNew}>Add New</button>
+      <button onClick={addNew}>Add Experience</button>
     </div>
      
    </div>
