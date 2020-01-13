@@ -32,14 +32,16 @@ function App() {
     console.log(newGroup)
   }
 
-  const handleStaticFormChange = (element) => {
+  const handleStaticFormChange = (formData) => {
+    console.log(formData)
     const newStaticFormState = staticFormState
 
-    console.log(element)
-    console.log(element.event.target.value)
-    console.log(element.index)
+    const value =  formData.element.type === 'input' ? formData.event.target.value : formData.event.value
+    
+    console.log(value)
+    console.log(formData.index)
 
-    newStaticFormState[element.index].value = element.event.target.value
+    newStaticFormState[formData.index].value = value
 
     console.log(newStaticFormState)
 
@@ -67,14 +69,14 @@ function App() {
     return outObject
   }
 
-  const handleGroupChange = (element) => {
+  const handleGroupChange = (formData) => {
     const newGroupState = deepCopy(groupState)
 
-    console.log(element)
-    console.log(element.event.target.value)
-    console.log(element.index)
+    console.log(formData)
+    console.log(formData.event.target.value)
+    console.log(formData.index)
 
-    newGroupState[element.index][element.name].value = element.event.target.value
+    newGroupState[formData.index][formData.name].value = formData.event.target.value
 
     console.log(newGroupState)
 
@@ -99,6 +101,7 @@ function App() {
         {
           staticFormState.map( (formItem, index) => (
             <FormElement
+              name={formItem.config.name}
               key={index}
               index={index}
               element={formItem}
